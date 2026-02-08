@@ -1,0 +1,17 @@
+
+{% if  request.user.is_authenticated %}
+    <div class="font-monospace" >
+        welcome <b>
+            {{request.user.username}}
+        </b>
+    </div>
+{% else %}
+    <form action="." method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button>
+            {{title}}
+        </button>
+    </form>
+{% endif %}
+    

@@ -1,0 +1,34 @@
+
+{% if messages %}
+    
+    {% for sms in messages %}
+        
+        {% if sms.tags == "success" %}
+            <div class="alert alert-success fw-bolder text-center" >
+                {{sms}}
+            </div>
+        
+        {% elif sms.tags == "info" %}
+            <div class="alert alert-info fw-bolder text-center" >
+                {{sms}}
+            </div>
+        
+        
+        {% elif sms.tags == "warning" %}
+            <div class="alert alert-warning fw-bolder text-center" >
+                {{sms}}
+            </div>
+        
+        
+        {% elif sms.tags == "error" %}
+            <div class="alert alert-danger fw-bolder text-center" >
+                {{sms}}
+            </div>
+        
+            
+        {% endif %}
+            
+    {% endfor %}
+        
+{% endif %}
+    

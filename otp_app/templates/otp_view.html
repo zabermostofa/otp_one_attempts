@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+{% if  request.user.is_authenticated %}
+    <div class="font-monospace" >
+        welcome <b>
+            {{request.user.username}}
+        </b>
+    </div>
+{% elif  request.session.username %}
+    <form action="." method="post">
+        {% csrf_token %}
+        <label class="text-capitalize" for="username">username:
+            <input type="text" name="username" value="{{request.session.username}}"  disabled >
+        </label>
+
+        <label class="text-capitalize" for="otp">otp:
+            <input type="text" name="otp" placeholder="Enter your otp"  >
+        </label>
+        <button>
+            {{title}}
+        </button>
+    </form>
+{% else %}
+    <div>
+        anonymous user
+    </div>
+{% endif %}
+    
+{% endblock content %}
+    

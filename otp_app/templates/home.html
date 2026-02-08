@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <center>
+        <h1>
+            {{day}} {{month_name}} {{year}}
+        </h1>
+        <h2>
+            {{day_name}}
+        </h2>
+    </center>
+    <div class="d-flex" >
+        <div class="ms-auto" >
+            {{previous_month_calendar|safe}}
+        </div>
+        <div class="mx-auto" >
+            {{current_month_calendar|safe}}
+        </div>
+        <div class="me-auto" >
+            {{next_month_calendar|safe}}
+        </div>
+    </div>
+{% endblock content %}
+    
